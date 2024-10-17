@@ -1,0 +1,105 @@
+body {
+  background-color: #1c1c1c;
+  color: whitesmoke;
+}
+
+.box {
+  background-color: rgb(173, 243, 127);
+  width: 100px;
+  height: 100px;
+
+  /*Atajo  */
+  transition: all 2s ease 1s;
+}
+
+.box:hover {
+  background: rgb(9, 107, 95);
+  width: 200px;
+  height: 200px;
+
+  /* Individuales */
+  /* 
+  transition-property: background-color; 
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+ */
+
+  /*  SI QUIERO RETRASAR EL TIEMPO DE SALIDA */
+  transition: all 1s;
+}
+
+/* https://www.w3schools.com/cssref/css3_pr_animation.php */
+
+/*  TRANSFORMACIONES */
+.container {
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  transform: translateX(100px);
+  transform: translateY(100px);
+  transform: rotate(45deg) scale(1.5);
+  transform: skew(45deg);
+}
+
+/* ANIMACIONES  */
+
+.caja {
+  width: 200px;
+  height: 200px;
+  border: 3px solid whitesmoke;
+  margin-top: 20px;
+  background-color: red;
+
+  animation-name: change-bg;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-play-state: running;
+
+  /* ATAJO
+  animation: change-bg 4s ease infinite alternate;
+   */
+
+  /*  ANIMACIONES ANIDADAS */
+  animation: change-bg 4s ease infinite alternate, mover-caja 2s ease infinite alternate;
+}
+
+@keyframes change-bg {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: green;
+  }
+}
+
+@keyframes change-bg {
+  0% {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+  }
+
+  50% {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    background-color: green;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@keyframes mover-caja {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
